@@ -1,3 +1,33 @@
+const { zokou } = require(__dirname + "/../framework/zokou");
+const conf = require(__dirname + "/../set");
+const moment = require("moment-timezone");
+const s = require(__dirname + "/../set");
+const more = String.fromCharCode(8206);
+const readmore = more.repeat(4001);
+
+zokou({
+  nomCom: "menu",
+  categorie: "General"
+}, async (_msg, sock, data) => {
+  let { ms, repondre, prefixe, nomAuteurMessage } = data;
+  let { cm } = require(__dirname + "/../framework/zokou");
+
+  // Determine bot mode
+  let mode = s.MODE.toLowerCase() === "yes" ? "Public" : "Private";
+
+  // Group commands by category
+  let grouped = {};
+  for (const command of cm) {
+    if (!grouped[command.categorie]) grouped[command.categorie] = [];
+    grouped[command.categorie].push(command.nomCom);
+  }
+
+  // Set timezone and get date/time
+  moment.tz.setDefault("Africa/Dar_es_Salaam");
+  const time = moment().format("HH:mm:ss");
+  const date = moment().format("DD/MM/YYYY");
+
+  // Menu header
 ╭─「 *DRAGON AI* 」
 │👤 *User:* +255763111390
 │📆 *Date:* 16/06/2025
