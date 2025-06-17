@@ -1,4 +1,4 @@
-╭─「 *RAHEEM XMD* 」
+╭─「 *DRAGON AI* 」
 │👤 *User:* +255763111390
 │📆 *Date:* 16/06/2025
 │⏰ *Time:* 22:28:06
@@ -452,4 +452,4 @@
 │ ➤ .vv2
 └─────────────⬣
 
-> 🤖 *RAHEEM XMD – Smart Assistant Ready to Help You!*
+> 🤖 *DRAGON AI– Smart Assistant Ready to Help You!*
