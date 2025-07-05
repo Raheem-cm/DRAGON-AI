@@ -1,4 +1,17 @@
-╭━━━❖━━━[ *RAHEEM-XMD-3* ]━━━❖━━━╮
+const config = require('../config');
+const { cmd, commands } = require('../command');
+const { runtime } = require('../lib/functions');
+const axios = require('axios');
+
+cmd({
+    pattern: "menu2",
+    desc: "Show interactive menu system",
+    category: "menu",
+    react: "🛸",
+    filename: __filename
+}, async (conn, mek, m, { from, reply }) => {
+    try {
+        const menuCaption = `╭━━━❖━━━[ *RAHEEM-XMD-3* ]━━━❖━━━╮
 ┃ 👤 Owner: *${config.OWNER_NAME}*
 ┃ 💻 Type: NodeJs (MD)
 ┃ 🌐 Platform: GitHub
@@ -265,4 +278,20 @@
 ┃ restart
 ╰────────────────────────────╯
 
-*Powered by RAHEEM CM*
+*Powered by RAHEEM CM*`;
+
+        // [Rest of your existing code remains unchanged...]
+
+    } catch (e) {
+        console.error('Menu Error:', e);
+        try {
+            await conn.sendMessage(
+                from,
+                { text: `❌ Menu system is currently busy. Please try again later.\n\n*Powered by RAHEEM CM*` },
+                { quoted: mek }
+            );
+        } catch (finalError) {
+            console.log('Final error handling failed:', finalError);
+        }
+    }
+});
